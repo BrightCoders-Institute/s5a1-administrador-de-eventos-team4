@@ -8,52 +8,7 @@
 </head>
 <body>
 
-<nav class="navbar bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="./main">
-      <%# <img src="https://cdn-icons-png.flaticon.com/128/4047/4047515.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> %>
-      Regresar
-    </a>
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Agregar Evento</a>
-        </li>
-      </ul>
-  </div>
-</nav>
-
-<form action="/events" accept-charset="UTF-8" method="post">
-  <input type="hidden" name="authenticity_token" value="...">
-
-  <div>
-    <label for="article_title">Titulo</label><br>
-    <input type="text" name="event[Titulo]" id="event_titulo">
-  </div>
-
-  <div>
-    <label for="article_body">Descripcion</label><br>
-    <textarea name="event[Descripcion]" id="event_descripcion"></textarea>
-  </div>
-
-   <div>
-    <label for="article_body">Fecha</label><br>
-    <textarea name="event[Fecha]" id="article_body"></textarea>
-  </div>
-
-   <div>
-    <label for="article_body">Ubicacion</label><br>
-    <textarea name="event[Ubicacion]" id="article_body"></textarea>
-  </div>
-
-   <div>
-    <label for="article_body">Costo</label><br>
-    <textarea name="event[Costo]" id="article_body"></textarea>
-  </div>
-
-  <div>
-    <input type="submit" name="commit" value="Create Evento" data-disable-with="Crear Evento">
-  </div>
-</form>
+<%= render 'navbar' %>
 
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-1">
   <% @event.each do |event| %>
@@ -70,7 +25,5 @@
     </div>
   <% end %>
 </div>
-
-
 </body>
 </html>
