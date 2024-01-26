@@ -10,7 +10,7 @@ class EventsController < ApplicationController
     @event = Event.new(events_paramas)
 
     if @event.save
-      redirect_to '/views/events/index'
+      redirect_to events_path, notice: 'Evento creado exitosamente.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,6 +23,6 @@ class EventsController < ApplicationController
   private
 
   def events_paramas
-    params.require(:event).permit(:Titulo, :Descripcion, :Fecha, :Ubicacion, :Costo)
+    params.require(:event).permit(:titulo, :descripcion, :fecha, :ubicacion, :costo)
   end
 end
