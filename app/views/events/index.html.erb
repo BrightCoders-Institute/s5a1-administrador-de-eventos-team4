@@ -5,12 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Título de tu Página</title>
     <!-- Enlaces a tus hojas de estilo (CSS) o scripts (JavaScript) -->
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
 
 <%= render 'navbar' %>
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-1">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Añadir Evento
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Añadir Evento</h5>
+      </div>
+      <div class="modal-body">
+          <form action="/events" accept-charset="UTF-8" method="post">
+            <div>
+              <label for="event_titulo">Titulo</label><br>
+              <input type="text" name="event[titulo]" id="event_titulo" required>
+            </div>
+
+            <div>
+              <label for="event_descripcion">Descripción</label><br>
+              <textarea name<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de tu Página</title>
+    <!-- Enlaces a tus hojas de estilo (CSS) o scripts (JavaScript) -->="event[descripcion]" id="event_descripcion" required></textarea>
+            </div>
+
+            <div>
+              <label for="event_fecha">Fecha</label><br>
+              <input type="date" name="event[fecha]" id="event_fecha" required>
+            </div>
+
+            <div>
+              <label for="event_ubicacion">Ubicación</label><br>
+              <textarea name="event[ubicacion]" id="event_ubicacion" required></textarea>
+            </div>
+
+            <div>
+              <label for="event_costo">Costo</label><br>
+              <input type="number" name="event[costo]" id="event_costo" required>
+            </div>
+
+            <div>
+              <input type="submit" name="commit" value="Guardar Evento" data-disable-with="Crear Evento">
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-0">
   <% @event.each do |event| %>
     <div class="col">
       <div class="card h-100">
