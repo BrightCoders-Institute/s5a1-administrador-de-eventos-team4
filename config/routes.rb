@@ -7,12 +7,11 @@ Rails.application.routes.draw do
   # post 'list_views', to: 'events#create'
   get '/main', to: 'events#main'
 
-  # get '/new', to: 'events#new'
-
+  get '/events', to: 'events#create'
+  # # get '/create', to: 'events#create'
   post '/events', to: 'events#create'
-  # resources :events do
-  #   get 'list_views', on: :collection
-  # end
+
+  # resources :events
 
   get 'up' => 'rails/health#show', as: :rails_health_check
   # Defines the root path route ("/")

@@ -8,16 +8,18 @@ window.Stimulus = application;
 
 export { application };
 
-import { Application } from "@hotwired/stimulus";
+document.addEventListener("DOMContentLoaded", function () {
+  let btnAceptar = document.querySelector(".btn-primary");
+  let btnCerrar = document.querySelector(".btn-secondary");
+  let modal = document.getElementById("exampleModal");
 
-const application = Application.start();
+  btnAceptar.addEventListener("click", () => {
+    let modalInstance = new bootstrap.Modal(modal);
+    modalInstance.show();
+  });
 
-// Configure Stimulus development experience
-application.debug = false;
-window.Stimulus = application;
-
-export { application };
-
-$(document).ready(function () {
-  $("#exampleModal").modal("show");
+  btnCerrar.addEventListener("click", () => {
+    let modalInstance = new bootstrap.Modal(modal);
+    modalInstance.hide();
+  });
 });
