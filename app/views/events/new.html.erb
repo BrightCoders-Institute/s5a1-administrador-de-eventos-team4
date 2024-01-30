@@ -1,0 +1,38 @@
+<%= render 'navbar' %>
+
+<div class="container">
+  <%= form_with(model: @event, method: "post", class: "my-form") do |form| %>
+    <div class="mb-3">
+        <%= form.label :titulo, "Titulo", class: "form-label" %>
+        <%= form.text_field :titulo, class: "form-control", required: true %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :descripcion, "Descripción", class: "form-label" %>
+        <%= form.text_area :descripcion, class: "form-control", required: true %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :fecha, "Fecha", class: "form-label" %>
+        <%= form.date_field :fecha, class: "form-control", required: true %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :ubicacion, "Ubicación", class: "form-label" %>
+        <%=form.text_area :ubicacion, class: "form-control", required: true %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :costo, "Costo", class: "form-label" %>
+        <%= form.number_field :costo, class: "form-control", required: true %>
+    </div>
+
+    <div class="text-center">
+        <%= form.submit "Guardar Evento", class: "btn btn-primary", data: { disable_with: "Creando Evento..." } %>
+    </div>
+  <% end %>
+
+  <div class="modal-footer mt-3">
+      <%= link_to "Regresar", events_index_path, class: "btn btn-secondary" %>
+  </div>
+</div>
