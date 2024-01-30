@@ -9,10 +9,7 @@ Rails.application.routes.draw do
 
   get '/events/new', to: 'events#new'
 
-  # get '/events/show', to: 'events#show'
-
-  get '/events/show/:id', to: 'events#show'
-  # get '/events/:id/show', to: 'events#show'
+  get '/events/edit/:id', to: 'events#edit'
 
   patch '/events/:id', to: 'events#update'
 
