@@ -11,6 +11,7 @@ class EventsController < ApplicationController
 
     if @event.save
       redirect_to events_path, notice: 'Evento creado exitosamente.'
+      # redirect_to '../views/events/index'
     else
       render :new, status: :unprocessable_entity
     end
