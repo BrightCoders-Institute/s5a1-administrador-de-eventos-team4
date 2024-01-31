@@ -18,8 +18,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_26_010854) do
     t.string "titulo"
     t.text "descripcion"
     t.datetime "fecha"
-    t.string "ubicacion"
-    t.integer "costo"
+    t.text "ubicacion"
+    t.float "costo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
