@@ -21,25 +21,30 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
+    set_event
   end
 
   def update
-    @event = Event.find(params[:id])
+    set_event
     if @event.update(events_params)
       redirect_to events_path index
     else
       render :edit
     end
   end
-  
+
   def destroy
-    @event =  Event.find(params[:id])
+    set_event
     @event.destroy
 
     redirect_to events_path index, notice: 'Tu evento se a eliminado correctamente', status: :see_other
   end
+
   private
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
   def events_params
     params.require(:event).permit(:id, :titulo, :descripcion, :fecha, :ubicacion, :costo)
