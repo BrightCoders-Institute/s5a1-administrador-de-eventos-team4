@@ -2,6 +2,9 @@
 
 # class Events
 class EventsController < ApplicationController
+
+  before_action :set_event, only: [:edit, :destroy, :update]
+
   def new
     @event = Event.new
   end
@@ -21,11 +24,9 @@ class EventsController < ApplicationController
   end
 
   def edit
-    set_event
   end
 
   def update
-    set_event
     if @event.update(events_params)
       redirect_to events_path index
     else
@@ -34,17 +35,16 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    set_event
     @event.destroy
 
     redirect_to events_path index, notice: 'Tu evento se a eliminado correctamente', status: :see_other
   end
 
-  private
-
   def set_event
     @event = Event.find(params[:id])
   end
+
+  private
 
   def events_params
     params.require(:event).permit(:id, :titulo, :descripcion, :fecha, :ubicacion, :costo)
