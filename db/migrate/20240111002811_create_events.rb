@@ -1,4 +1,7 @@
-class CreateEvent < ActiveRecord::Migration[7.1]
+# frozen_string_literal: false
+
+# events
+class CreateEvents < ActiveRecord::Migration[7.1]
   def change
     create_table :events do |t|
       t.string :Titulo
