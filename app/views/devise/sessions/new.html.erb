@@ -2,28 +2,28 @@
   <div class="row justify-content-center align-items-center h-100">
     <div class="col-md-6">
       <div class="card">
-        <div class="card-header bg-dark text-white">Log in</div>
+        <div class="card-header bg-dark text-white">Iniciar Sesion</div>
         <div class="card-body">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-group">
-              <%= f.label :email, class: "font-weight-bold" %>
+              <%= f.label :email, "Correo Electronico", class: "font-weight-bold" %>
               <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
             </div>
 
             <div class="form-group">
-              <%= f.label :password, class: "font-weight-bold" %>
+              <%= f.label :password, "Contraseña", class: "font-weight-bold" %>
               <%= f.password_field :password, class: "form-control", autocomplete: "current-password" %>
             </div>
 
             <% if devise_mapping.rememberable? %>
               <div class="form-group">
                 <%= f.check_box :remember_me, class: "form-check-input" %>
-                <%= f.label :remember_me, class: "form-check-label" %>
+                <%= f.label :remember_me, "Recordarme", class: "form-check-label" %>
               </div>
             <% end %>
 
             <div class="form-group">
-              <%= f.submit "Log in", class: "btn btn-dark btn-block" %>
+              <%= f.submit "Iniciar Sesion", class: "btn btn-dark btn-block" %>
             </div>
           <% end %>
 
