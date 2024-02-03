@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.event.create(events_params)
+    @event = current_user.events.create(events_params)
 
     if @event.save
       redirect_to events_index_path
