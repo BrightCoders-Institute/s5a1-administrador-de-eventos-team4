@@ -1,13 +1,13 @@
 <table class="table table-bordered table-striped">
   <thead class="thead-dark">
     <tr>
-      <th style="width: 5%;">No de Evento</th>
-      <th>Titulo</th>
-      <th>Descripción</th>
-      <th>Fecha</th>
-      <th>Ubicación</th>
-      <th>Costo</th>
-      <th>Privado</th>
+      <th style="width: 5%;"><%= image_tag "icons/list.svg" %> ID</th>
+      <th><%= image_tag "icons/title.svg" %> Titulo</th>
+      <th><%= image_tag "icons/description.svg" %> Descripción</th>
+      <th><%= image_tag "icons/date.svg" %> Fecha</th>
+      <th><%= image_tag "icons/location.svg" %> Ubicación</th>
+      <th><%= image_tag "icons/price.svg" %>  Costo</th>
+      <th><%= image_tag "icons/private.svg" %></th>
       <th>Editar</th>
       <th>Eliminar</th>
     </tr>
@@ -19,20 +19,19 @@
           <td><%= event.titulo %></td>
           <td><%= event.descripcion %></td>
           <td><%= event.fecha %></td>
-          <td><%= event.ubicacion %></td>
+          <td><%= event.ubicacion.gsub(".", "<br>").html_safe %></td>
           <td><%= event.costo %></td>
-          <td><%= event.privado %></td>
+          <td><%= event.privado ? 'Si' : 'No' %></td>
           <td>
             <%= link_to 'Editar', edit_event_path(event) %>
           </td>
           <td>
             <%= button_to event_path(event), method: :delete do %>
-              <%= image_tag "trash.svg" %>
+              <%= image_tag "icons/trash.svg" %>
             <% end %>
           </td>
         </tr>
     <% end %>
-
          </td>
       </tr>
   </tbody>

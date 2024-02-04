@@ -1,13 +1,13 @@
 <table class="table table-bordered table-striped">
   <thead class="thead-dark">
     <tr>
-      <th style="width: 5%;">No de Evento</th>
-      <th>Dueño</th>
-      <th>Titulo</th>
-      <th>Descripción</th>
-      <th>Fecha</th>
-      <th>Ubicación</th>
-      <th>Costo</th>
+      <th style="width: 5%;"><%= image_tag "icons/list.svg" %> ID</th>
+      <th><%= image_tag "icons/user.svg" %> Dueño</th>
+      <th><%= image_tag "icons/title.svg" %> Titulo</th>
+      <th><%= image_tag "icons/description.svg" %> Descripción</th>
+      <th><%= image_tag "icons/date.svg" %> Fecha</th>
+      <th><%= image_tag "icons/location.svg" %> Ubicación</th>
+      <th><%= image_tag "icons/price.svg" %>  Costo</th>
     </tr>
   </thead>
   <tbody>
@@ -19,7 +19,7 @@
         <td><%= event.titulo %></td>
         <td><%= event.descripcion %></td>
         <td><%= event.fecha %></td>
-        <td><%= event.ubicacion %></td>
+        <td><%= event.ubicacion.gsub(".", "<br>").html_safe %></td>
         <td><%= event.costo %></td>
         </tr>
       <% end %>

@@ -35,7 +35,9 @@
           <% end %>
         </li>
       </ul>
-          <%= current_user.name if current_user%>
+
+      <p class="text-light"><%= current_user.name if current_user%></p>
+      
       <div>
         <% if signed_in? %>
           <%= link_to "Salir", destroy_user_session_path, method: :delete, data:{turbo_method: :delete},class: "btn btn-dark" %>

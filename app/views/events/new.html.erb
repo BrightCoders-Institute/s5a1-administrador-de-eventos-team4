@@ -7,7 +7,7 @@
 
     <div class="mb-3">
         <%= form.label :descripcion, "Descripción", class: "form-label" %>
-        <%= form.text_area :descripcion, class: "form-control", required: true %>
+        <%= form.text_field :descripcion, class: "form-control", required: true %>
     </div>
 
     <div class="mb-3">
@@ -15,10 +15,11 @@
         <%= form.date_field :fecha, class: "form-control", required: true %>
     </div>
 
-    <div class="mb-3">
-        <%= form.label :ubicacion, "Ubicación", class: "form-label" %>
-        <%=form.text_area :ubicacion, class: "form-control", required: true %>
-    </div>
+    <div data-controller="map" class="mb-3">
+        <%= form.label :fecha, "Ubicacion", class: "form-label" %>
+        <div id="map" style="width: 100%; height: 300px;"></div>
+        <%= form.text_field :ubicacion, class: "form-control ubicacion", required: true %>
+    </div>  
 
     <div class="mb-3">
         <%= form.label :costo, "Costo", class: "form-label" %>

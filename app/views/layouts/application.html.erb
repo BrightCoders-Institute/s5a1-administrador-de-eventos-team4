@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+     
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag 'Control-Geocoder' %>
+    
   </head>
 
   <body>
     <%= render 'layouts/navbar' %>
     
     <%= yield %>
+
   </body>
+
+  <%= javascript_include_tag "leaflet" %>
+  <%= javascript_include_tag "Control-Geocoder" %>
+  
 </html>
