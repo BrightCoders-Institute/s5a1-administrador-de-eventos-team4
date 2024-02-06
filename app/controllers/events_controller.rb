@@ -11,17 +11,21 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(events_params)
+    @event = current_user.events.create(events_params)
 
     if @event.save
-      redirect_to events_path index
+      redirect_to events_index_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def index
-    @event = Event.all
+    @event = Event.user_event(current_user)
+  end
+
+  def public
+    @event = Event.where(privado: false)
   end
 
   def edit
@@ -29,7 +33,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(events_params)
-      redirect_to events_path index
+      redirect_to events_index_path
     else
       render :edit
     end
@@ -38,7 +42,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
 
-    redirect_to events_path index, notice: 'Tu evento se a eliminado correctamente', status: :see_other
+    redirect_to events_index_path
   end
 
   def set_event
@@ -48,6 +52,6 @@ class EventsController < ApplicationController
   private
 
   def events_params
-    params.require(:event).permit(:id, :titulo, :descripcion, :fecha, :ubicacion, :costo)
+    params.require(:event).permit(:id, :titulo, :descripcion, :fecha, :ubicacion, :costo, :privado, :user_id)
   end
 end

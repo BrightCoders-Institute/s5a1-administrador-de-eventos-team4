@@ -7,28 +7,33 @@
       <th>Fecha</th>
       <th>Ubicación</th>
       <th>Costo</th>
+      <th>Privado</th>
       <th>Editar</th>
       <th>Eliminar</th>
     </tr>
   </thead>
   <tbody>
     <% @event.each do |event| %>
-      <tr>
-        <td><%= event.id %></td>
-        <td><%= event.titulo %></td>
-        <td><%= event.descripcion %></td>
-        <td><%= event.fecha %></td>
-        <td><%= event.ubicacion %></td>
-        <td><%= event.costo %></td>
-        <td>
-          <%= link_to 'Editar', edit_event_path(event) %>
-        </td>
-        <td>
-        <%= button_to event_path(event), method: :delete do %>
-          <% image_tag "trash.svg" %>
-        <% end %>
+        <tr>
+          <td><%= event.id %></td>
+          <td><%= event.titulo %></td>
+          <td><%= event.descripcion %></td>
+          <td><%= event.fecha %></td>
+          <td><%= event.ubicacion %></td>
+          <td><%= event.costo %></td>
+          <td><%= event.privado %></td>
+          <td>
+            <%= link_to 'Editar', edit_event_path(event) %>
+          </td>
+          <td>
+            <%= button_to event_path(event), method: :delete do %>
+              <%= image_tag "trash.svg" %>
+            <% end %>
+          </td>
+        </tr>
+    <% end %>
+
          </td>
       </tr>
-    <% end %>
   </tbody>
 </table>

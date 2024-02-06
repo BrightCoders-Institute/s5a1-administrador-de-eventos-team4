@@ -1,0 +1,30 @@
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th style="width: 5%;">No de Evento</th>
+      <th>Dueño</th>
+      <th>Titulo</th>
+      <th>Descripción</th>
+      <th>Fecha</th>
+      <th>Ubicación</th>
+      <th>Costo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @event.each do |event| %>
+      <% unless event.privado %>
+        <tr>
+        <td><%= event.id %></td>
+        <td><%= event.user.name %></td>
+        <td><%= event.titulo %></td>
+        <td><%= event.descripcion %></td>
+        <td><%= event.fecha %></td>
+        <td><%= event.ubicacion %></td>
+        <td><%= event.costo %></td>
+        </tr>
+      <% end %>
+    <% end %>
+         </td>
+      </tr>
+  </tbody>
+</table>

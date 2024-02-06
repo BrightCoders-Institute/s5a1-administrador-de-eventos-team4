@@ -25,6 +25,11 @@
         <%= form.number_field :costo, class: "form-control", required: true %>
     </div>
 
+    <div class="mb-3">
+        <%= form.check_box :privado, class: "form-check-input" %>
+        <%= form.label :privado, "Privado", class: "form-check-label" %>
+    </div>
+
     <div class="text-center">
         <%= form.submit "Guardar Evento", class: "btn btn-primary", data: { disable_with: "Creando Evento..." } %>
     </div>
