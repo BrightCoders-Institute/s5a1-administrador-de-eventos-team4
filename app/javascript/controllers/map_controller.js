@@ -3,17 +3,25 @@ import { Controller } from "@hotwired/stimulus";
 // Connects to data-controller="map"
 export default class extends Controller {
   connect() {
+    let latitud = document.querySelector(".latitud");
+    let longitud = document.querySelector(".longitud");
+    let ubicacion = document.querySelector(".ubicacion");
+
     const apiKey = "pk.8ef046976867e15790d27dae0c26d553";
 
-    var map = L.map("map").setView([19.24997, -103.72714], 13);
+    let coordenadas =
+      latitud.value && longitud.value
+        ? [[latitud.value, longitud.value], 18]
+        : [[19.24997, -103.72714], 13];
+
+    let map = L.map("map").setView(...coordenadas);
+    let popup = L.popup();
 
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution:
         '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(map);
-
-    var popup = L.popup();
 
     L.Control.geocoder({
       position: "topright",
@@ -26,10 +34,11 @@ export default class extends Controller {
     }
 
     map.on("click", function (e) {
-      let ubicacion = document.querySelector(".ubicacion");
+      latitud.value = e.latlng.lat;
+      longitud.value = e.latlng.lng;
 
       fetch(
-        `https://us1.locationiq.com/v1/reverse?key=${apiKey}&lat=${e.latlng.lat}&lon=${e.latlng.lng}&format=json`
+        `https://us1.locationiq.com/v1/reverse?key=${apiKey}&lat=${latitud.value}&lon=${longitud.value}&format=json`
       )
         .then((response) => {
           if (!response.ok) {

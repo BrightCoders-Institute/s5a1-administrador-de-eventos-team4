@@ -24,5 +24,5 @@ Rails.application.routes.draw do
 
   get 'up' => 'rails/health#show', as: :rails_health_check
 
-  root 'events#index'
+  root 'events#/events/index'
 end

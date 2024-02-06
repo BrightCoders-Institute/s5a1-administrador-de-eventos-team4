@@ -24,6 +24,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_04_004419) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.boolean "privado"
+    t.float "latitud"
+    t.float "longitud"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
