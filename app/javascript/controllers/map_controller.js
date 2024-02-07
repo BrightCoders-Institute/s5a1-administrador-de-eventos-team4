@@ -3,11 +3,18 @@ import { Controller } from "@hotwired/stimulus";
 // Connects to data-controller="map"
 export default class extends Controller {
   connect() {
+    let apiKey = "";
+
+    fetch("/key/show")
+      .then((response) => response.json())
+      .then((data) => {
+        apiKey = data.api_key;
+      })
+      .catch((error) => console.error("Error fetching API_KEY:", error));
+
     let latitud = document.querySelector(".latitud");
     let longitud = document.querySelector(".longitud");
     let ubicacion = document.querySelector(".ubicacion");
-
-    const apiKey = "pk.8ef046976867e15790d27dae0c26d553";
 
     let coordenadas =
       latitud.value && longitud.value

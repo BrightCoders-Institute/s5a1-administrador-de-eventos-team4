@@ -77,3 +77,5 @@ end
 gem "devise", "~> 4.9"
 
 gem 'leaflet-rails', '~> 1.9', '>= 1.9.4'
+
+gem 'dotenv', groups: [:development, :test]
