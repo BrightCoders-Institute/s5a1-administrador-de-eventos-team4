@@ -4,14 +4,11 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <% if !signed_in?%>
-            <p class= "text-light">SISTEMA DE GESTION DE EVENTOS</p> 
+          <% unless signed_in? %>
+          <p class="text-light">SISTEMA DE GESTION DE EVENTOS</p>
+          <% else %>
+            <%= link_to "Sistema de Gestion Eventos", events_main_path, class: "btn btn-dark text-light" %>
           <% end %>
-        <li class="nav-item">
-          <% if signed_in?%>
-            <%= link_to "Sistema de Gestion Eventos", events_main_path , class: "btn btn-dark text-light"%>
-          <% end %>
-        </li>
         <li class="nav-item">
           <% if signed_in? && current_page?(events_main_path) || current_page?(root_path)%>
             <%= link_to "Iniciar", events_index_path , class: "nav-link active"%>
