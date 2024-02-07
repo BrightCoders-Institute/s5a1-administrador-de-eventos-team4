@@ -10,8 +10,6 @@ gem "bootstrap"
 
 gem 'bootstrap-sass'
 
-gem 'turbolinks', '~> 5.0'
-
 gem 'jquery-rails'
 
 # gem sass
@@ -77,3 +75,7 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+
+gem 'leaflet-rails', '~> 1.9', '>= 1.9.4'
+
+gem 'dotenv', groups: [:development, :test]

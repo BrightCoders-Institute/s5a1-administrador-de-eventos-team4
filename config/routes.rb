@@ -20,9 +20,12 @@ Rails.application.routes.draw do
 
   post '/events', to: 'events#create'
 
+  # config/routes.rb
+  get '/key/show', to: 'key#show'
+
   resources :events
 
   get 'up' => 'rails/health#show', as: :rails_health_check
 
-  root 'events#main'
+  root 'events#/events/index'
 end

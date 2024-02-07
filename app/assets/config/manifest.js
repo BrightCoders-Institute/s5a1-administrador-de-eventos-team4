@@ -5,4 +5,4 @@
 //= require bootstrap
 //= require jquery
 //= require popper
-//= require turbolinks
+//= require Control-Geocoder
