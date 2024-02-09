@@ -31,6 +31,8 @@
     <div class="mb-3">
         <%= form.check_box :privado, class: "form-check-input" %>
         <%= form.label :privado, "Privado", class: "form-check-label" %>
+        <%= form.label :foto, 'Cambiar Imagen', class: "form-label" %>
+        <%= form.file_field :foto, class: "form-control-file" %>
     </div>
 
     <div class="text-center">

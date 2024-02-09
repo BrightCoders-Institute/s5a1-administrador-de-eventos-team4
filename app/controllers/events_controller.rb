@@ -45,6 +45,12 @@ class EventsController < ApplicationController
     redirect_to events_index_path
   end
 
+  def destroy_foto
+    @event = Event.find(params[:id])
+    @event.foto.destroy
+    redirect_back fallback_location: events_index_path, notice: 'succes'
+  end
+
   def set_event
     @event = Event.find(params[:id])
   end
@@ -53,7 +59,7 @@ class EventsController < ApplicationController
 
   def events_params
     params.require(:event).permit(
-      :id, :titulo, :descripcion, :fecha, :ubicacion, :latitud, :longitud, :costo, :privado, :user_id
+      :id, :titulo, :descripcion, :fecha, :ubicacion, :latitud, :longitud, :costo, :privado, :user_id, :foto
     )
   end
 end

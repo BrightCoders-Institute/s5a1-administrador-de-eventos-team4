@@ -13,7 +13,8 @@
             </div>
 
             <div class="form-group">
-              <%= f.submit "Recibir instrucciones para cambiar mi contraseña", class: "btn btn-dark btn-block" %>
+              <%= f.submit "Recibir instrucciones para cambiar mi contraseña", class: "pasbtn separation" %>
+              <%= link_to "Iniciar Sesion", new_session_path(resource_name), class: 'loginbtnr separation' %>
             </div>
           <% end %>
 
