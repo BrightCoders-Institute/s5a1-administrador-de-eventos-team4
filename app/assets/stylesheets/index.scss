@@ -1,0 +1,22 @@
+.beditar {
+  display: flex;
+  text-align: center;
+  background-color: #ac019e;
+  border-color: #ffffff;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 4px 15px;
+  transition: background-color 0.3s ease;
+}
+.beditar:hover {
+  background-color: #910196;
+}
+
+.buttons {
+  justify-content: center;
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+}
