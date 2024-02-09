@@ -68,6 +68,14 @@ Rails.application.configure do
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
+
+  # Store files locally.
+  config.active_storage.service = :local
+
+  # Store files on Amazon S3.
+  config.active_storage.service = :amazon
+
+
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter = :resque
   # config.active_job.queue_name_prefix = "s5a1_administrador_de_eventos_team4_production"

@@ -8,13 +8,15 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= stylesheet_link_tag 'Control-Geocoder' %>
-    
+    <%= stylesheet_link_tag 'login' %>
+    <%= stylesheet_link_tag 'index' %>
   </head>
 
   <body>
     <%= render 'layouts/navbar' %>
     
     <%= yield %>
+
   </body>
 
   <%= javascript_include_tag "leaflet" %>

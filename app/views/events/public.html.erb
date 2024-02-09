@@ -1,30 +1,21 @@
-<table class="table table-bordered table-striped">
-  <thead class="thead-dark">
-    <tr>
-      <th style="width: 5%;"><%= image_tag "icons/list.svg" %> ID</th>
-      <th><%= image_tag "icons/user.svg" %> Dueño</th>
-      <th><%= image_tag "icons/title.svg" %> Titulo</th>
-      <th><%= image_tag "icons/description.svg" %> Descripción</th>
-      <th><%= image_tag "icons/date.svg" %> Fecha</th>
-      <th><%= image_tag "icons/location.svg" %> Ubicación</th>
-      <th><%= image_tag "icons/price.svg" %>  Costo</th>
-    </tr>
-  </thead>
-  <tbody>
+<div style="width: 1000px; margin-top: 100px; max-height: 700px; overflow-y: auto; margin-left: 23%;">
+  <div class="d-flex flex-wrap justify-content-between">
     <% @event.each do |event| %>
-      <% unless event.privado %>
-        <tr>
-        <td><%= event.id %></td>
-        <td><%= event.user.name %></td>
-        <td><%= event.titulo %></td>
-        <td><%= event.descripcion %></td>
-        <td><%= event.fecha %></td>
-        <td><%= event.ubicacion.gsub(".", "<br>").html_safe %></td>
-        <td><%= event.costo %></td>
-        </tr>
-      <% end %>
+    <div class="mr-3 mb-3" style="width: calc(33.33% - 1rem); max-width: calc(33.33% - 1rem);">
+      <div class="card h-100" style="width: 100%; border-radius: 15px; border: 1px solid #E0E0E0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <td><%= image_tag event.foto if event.foto.attached? %></td>
+        <div class="card-body">
+          <h5 class="card-title"> Dueño: <%= event.user.name %><%= image_tag "icons/user.svg" %></h5>
+          <h5 class="card-title"> Titulo: <%= event.titulo %><%= image_tag "icons/title.svg" %></h5>
+          <p class="card-text"><%= image_tag "icons/description.svg" %> Descripción: <%= event.descripcion %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> <%= image_tag "icons/date.svg" %> Fecha: <%= event.fecha %></li>
+          <li class="list-group-item"><%= image_tag "icons/location.svg" %> <%= event.ubicacion.gsub(".", "<br>").html_safe %></li>
+          <li class="list-group-item"> Costo: <%= image_tag "icons/price.svg" %><%= event.costo %> </li>
+        </ul>
+      </div>
+    </div>
     <% end %>
-         </td>
-      </tr>
-  </tbody>
-</table>
+  </div>
+</div>

@@ -20,10 +20,15 @@ Rails.application.routes.draw do
 
   post '/events', to: 'events#create'
 
-  # config/routes.rb
   get '/key/show', to: 'key#show'
 
-  resources :events
+  get '/events/:id/destroy_foto', to: 'events#destroy_foto'
+
+  resources :events do
+    member do
+      delete :destroy_foto
+    end
+  end
 
   get 'up' => 'rails/health#show', as: :rails_health_check
 

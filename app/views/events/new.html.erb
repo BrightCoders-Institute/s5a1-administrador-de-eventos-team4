@@ -28,9 +28,11 @@
         <%= form.number_field :costo, class: "form-control", required: true %>
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3 ml-5">
         <%= form.check_box :privado, class: "form-check-input" %>
         <%= form.label :privado, "Privado", class: "form-check-label" %>
+        <%= form.label :foto, 'Imagen', class: "form-label" %>
+        <%= form.file_field :foto, class: "form-control-file" %>
     </div>
 
     <div class="text-center">
