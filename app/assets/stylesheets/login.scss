@@ -1,10 +1,30 @@
+.contramsg:hover {
+  background-color: #3c0364;
+} /*# sourceMappingURL=login.css.map */
+
+.separation {
+  margin: 20px 20px;
+}
+
+.contramsg {
+  background-color: #5100a2;
+  border-radius: 5px;
+  border-color: #212529;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 15px 35px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
 .loginbtn {
   background-color: #007bff;
   border-color: #007bff;
-  color: #ffffff;
-  padding: 10px 20px;
   border-radius: 5px;
+  color: #ffffff;
   cursor: pointer;
+  padding: 10px 20px;
   transition: background-color 0.3s ease;
   text-decoration: none;
 }
@@ -15,36 +35,15 @@
 .registrarmsg {
   background-color: #259503;
   border-color: #ffffff;
-  color: #ffffff;
   border-radius: 5px;
+  border-radius: 5px;
+  color: #ffffff;
   cursor: pointer;
+  padding: 15px 35px;
   text-align: center;
   text-decoration: none;
-  border-radius: 5px;
-  padding: 15px 35px;
   transition: background-color 0.3s ease;
 }
 .registrarmsg:hover {
   background-color: #046f00;
-}
-
-.contramsg {
-  background-color: #5100a2;
-  border-color: #212529;
-  color: #ffffff;
-  padding: 20px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 10;
-  padding: 15px 35px;
-  transition: background-color 0.3s ease;
-}
-.contramsg:hover {
-  background-color: #3c0364;
-} /*# sourceMappingURL=login.css.map */
-
-.separation {
-  margin: 20px 20px;
 }
