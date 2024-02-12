@@ -23,11 +23,11 @@ Rails.application.routes.draw do
 
   get '/key/show', to: 'key#show'
 
-  get '/events/:id/destroy_foto', to: 'events#destroy_foto'
+  get '/events/:id/destroy_photo', to: 'events#destroy_photo'
 
   resources :events do
     member do
-      delete :destroy_foto
+      delete :destroy_photo
     end
   end
 

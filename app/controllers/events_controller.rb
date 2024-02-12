@@ -69,7 +69,7 @@ class EventsController < ApplicationController
     redirect_to events_index_path
   end
 
-  def destroy_foto
+  def destroy_photo
     @event = Event.find(params[:id])
     @event.foto.destroy
     redirect_back fallback_location: events_index_path, notice: 'succes'

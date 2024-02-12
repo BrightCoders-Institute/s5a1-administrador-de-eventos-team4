@@ -7,14 +7,7 @@
               <h5 class="card-title"> Dueño: <%= event.user.name %><%= image_tag "icons/user.svg" %></h5>
               <h5 class="card-title"> Titulo: <%= event.titulo %><%= image_tag "icons/title.svg" %></h5>
             </div>
-            <img>
-              <% if event.foto.attached? %>
-                <%= image_tag event.foto%>
-                <%= link_to 'Eliminar Foto', destroy_foto_event_path(event), method: :delete, data: { confirm: '¿Estás seguro de que quieres eliminar esta foto?' } %>
-              <% else %>
-                <%= 'No hay foto de este evento' %>
-              <% end %>
-            </img>
+              <%= event.foto.attached? ? (image_tag event.foto) : ('No hay foto de este evento') %>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><%= image_tag "icons/description.svg" %> Descripción: <%= event.descripcion %></li>
           <li class="list-group-item"> <%= image_tag "icons/date.svg" %> Fecha: <%= event.fecha %></li>
