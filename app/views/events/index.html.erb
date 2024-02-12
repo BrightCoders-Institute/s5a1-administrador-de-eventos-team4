@@ -1,19 +1,30 @@
+<div class="search">
+    <form>
+      <%= date_field :fecha, @date, class: 'field',required: true %>
+      <%= submit_tag "Filtrar Fecha", class: "filter" %>
+    </form>
+    <form>
+      <%= select_tag(:privado, options_for_select([['Privado', true], ['Publico', false]]), class: 'check') %>
+      <%= submit_tag "Filtrar Tipo", class: "filter" %>
+    </form>
+      <%= link_to 'Reiniciar', events_index_path, class: "filter" %>
+  </div>
 <div style="width: 1000px; margin-top: 100px; max-height: 700px; overflow-y: auto; margin-left: 23%;">
   <div class="d-flex flex-wrap justify-content-between">
     <% @event.each do |event| %>
     <div class="mr-3 mb-3" style="width: calc(33.33% - 1rem); max-width: calc(33.33% - 1rem);">
       <div class="card h-100" style="width: 100%; border-radius: 15px; border: 1px solid #E0E0E0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-          <td><%= image_tag event.foto if event.foto.attached? %></td>
+          <h5 class="card-title"><%= event.id %>._ <%= event.titulo %></h5>
+          <img>
           <% if event.foto.attached? %>
+            <%= image_tag event.foto%>
             <%= link_to 'Eliminar Foto', destroy_foto_event_path(event), method: :delete, data: { confirm: '¿Estás seguro de que quieres eliminar esta foto?' } %>
           <% else %>
             <%= 'No hay foto de este evento' %>
           <% end %>
-        <div class="card-body">
-          <h5 class="card-title"><%= event.id %>._ <%= event.titulo %></h5>
-          <p class="card-text"><%= event.descripcion %></p>
-        </div>
+        </img>
         <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= event.descripcion %></li>
           <li class="list-group-item"> Fecha: <%= event.fecha %></li>
           <li class="list-group-item"><%= event.ubicacion.gsub(".", "<br>").html_safe %></li>
           <li class="list-group-item"> Costo: <%= event.costo %> Privado: <%= event.privado ? 'Si' : 'No' %></li>
