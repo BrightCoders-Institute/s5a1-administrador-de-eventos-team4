@@ -1,16 +1,18 @@
+@import "./colors/variables.scss";
+
 .contramsg:hover {
-  background-color: #3c0364;
-} /*# sourceMappingURL=login.css.map */
+  background-color: $hover-pass;
+}
 
 .separation {
   margin: 20px 20px;
 }
 
 .contramsg {
-  background-color: #5100a2;
+  background-color: $back-pass;
+  border-color: $border-pass;
   border-radius: 5px;
-  border-color: #212529;
-  color: #ffffff;
+  color: $white;
   cursor: pointer;
   padding: 15px 35px;
   text-align: center;
@@ -19,25 +21,25 @@
 }
 
 .loginbtn {
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: $blue;
+  border-color: $blue;
   border-radius: 5px;
-  color: #ffffff;
+  color: $white;
   cursor: pointer;
   padding: 10px 20px;
-  transition: background-color 0.3s ease;
   text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 .loginbtn:hover {
-  background-color: #0056b3;
+  background-color: $login-hover;
 }
 
 .registrarmsg {
-  background-color: #259503;
-  border-color: #ffffff;
+  background-color: $reg-back;
+  border-color: $white;
   border-radius: 5px;
   border-radius: 5px;
-  color: #ffffff;
+  color: $white;
   cursor: pointer;
   padding: 15px 35px;
   text-align: center;
@@ -45,5 +47,5 @@
   transition: background-color 0.3s ease;
 }
 .registrarmsg:hover {
-  background-color: #046f00;
+  background-color: $hover-reg;
 }
