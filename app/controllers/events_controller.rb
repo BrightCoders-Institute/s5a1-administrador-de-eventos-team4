@@ -30,25 +30,26 @@ class EventsController < ApplicationController
 
   def filter
     if @date
-      @event = Event.user_event(current_user).where(fecha: @date)
+      @event = Event.user_event(current_user).where(fecha: @date).paginate(page: params[:page], per_page: 3)
       @date = ''
     else
-      @event = Event.user_event(current_user)
+      # @products = Product.all.paginate(page: params[:page], per_page: 5)
+      @event = Event.user_event(current_user).paginate(page: params[:page], per_page: 3)
     end
   end
 
   def filer_private
-    @event = Event.user_event(current_user).where(privado: @private) if @private
+    @event = Event.user_event(current_user).where(privado: @private).paginate(page: params[:page], per_page: 3) if @private
     @private = ''
   end
 
   def public
     @date = params[:fecha]
     if @date
-      @event = Event.where(fecha: @date, privado: false)
+      @event = Event.where(fecha: @date, privado: false).paginate(page: params[:page], per_page: 3)
       @date = ''
     else
-      @event = Event.where(privado: false)
+      @event = Event.where(privado: false).paginate(page: params[:page], per_page: 3)
     end
   end
 
