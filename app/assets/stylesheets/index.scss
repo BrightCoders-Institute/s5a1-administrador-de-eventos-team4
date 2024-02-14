@@ -70,6 +70,7 @@
   border: 1px solid $color-border;
   color: $white;
   font-size: 16px;
+  text-decoration: none;
   padding: 8px 12px;
   transition: border-color 0.3s ease-in-out;
   width: 120px;
@@ -104,4 +105,19 @@
 
 .check option:hover {
   background-color: lighten($color-background, 10%);
+}
+
+.delete-photo {
+  background-color: $red;
+  border-radius: 5px;
+  color: $white;
+  cursor: pointer;
+  margin-top: 5px;
+  padding: 4px 15px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.delete-photo:hover {
+  background-color: rgb(125, 3, 3);
 }

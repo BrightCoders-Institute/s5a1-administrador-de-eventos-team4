@@ -81,3 +81,5 @@ gem 'leaflet-rails', '~> 1.9', '>= 1.9.4'
 gem 'dotenv', groups: [:development, :test]
 
 gem "image_processing", ">= 1.2"
+
+gem 'will_paginate', '~> 3.3'
