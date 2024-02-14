@@ -3,17 +3,13 @@
     <% @event.each do |event| %>
     <div class="mr-3 mb-3" style="width: calc(33.33% - 1rem); max-width: calc(33.33% - 1rem);">
       <div class="card h-100" style="width: 100%; border-radius: 15px; border: 1px solid #E0E0E0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-          <td><%= image_tag event.foto if event.foto.attached? %></td>
-          <% if event.foto.attached? %>
-            <%= link_to 'Eliminar Foto', destroy_foto_event_path(event), method: :delete, data: { confirm: '¿Estás seguro de que quieres eliminar esta foto?' } %>
-          <% else %>
-            <%= 'No hay foto de este evento' %>
-          <% end %>
-        <div class="card-body">
           <h5 class="card-title"><%= event.id %>._ <%= event.titulo %></h5>
-          <p class="card-text"><%= event.descripcion %></p>
-        </div>
+          <%= event.foto.attached? ? 
+            (image_tag event.foto) +
+            (link_to 'Eliminar Foto', destroy_photo_event_path(event), class: 'delete-photo', method: :delete, data: { confirm: '¿Estás seguro de que quieres eliminar esta foto?' }) :
+            ('No hay foto de este evento') %>
         <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= event.descripcion %></li>
           <li class="list-group-item"> Fecha: <%= event.fecha %></li>
           <li class="list-group-item"><%= event.ubicacion.gsub(".", "<br>").html_safe %></li>
           <li class="list-group-item"> Costo: <%= event.costo %> Privado: <%= event.privado ? 'Si' : 'No' %></li>

@@ -21,11 +21,35 @@ class EventsController < ApplicationController
   end
 
   def index
-    @event = Event.user_event(current_user)
+    @date = params[:fecha]
+    @private = params[:privado]
+
+    filter
+    filer_private
+  end
+
+  def filter
+    if @date
+      @event = Event.user_event(current_user).where(fecha: @date)
+      @date = ''
+    else
+      @event = Event.user_event(current_user)
+    end
+  end
+
+  def filer_private
+    @event = Event.user_event(current_user).where(privado: @private) if @private
+    @private = ''
   end
 
   def public
-    @event = Event.where(privado: false)
+    @date = params[:fecha]
+    if @date
+      @event = Event.where(fecha: @date, privado: false)
+      @date = ''
+    else
+      @event = Event.where(privado: false)
+    end
   end
 
   def edit
@@ -45,7 +69,7 @@ class EventsController < ApplicationController
     redirect_to events_index_path
   end
 
-  def destroy_foto
+  def destroy_photo
     @event = Event.find(params[:id])
     @event.foto.destroy
     redirect_back fallback_location: events_index_path, notice: 'succes'
