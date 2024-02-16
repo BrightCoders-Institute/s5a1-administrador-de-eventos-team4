@@ -24,7 +24,9 @@ module S5a1AdministradorDeEventosTeam4
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
-    #
+
+    # config/application.rb
+    config.active_job.queue_adapter = :delayed_job
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
   end
