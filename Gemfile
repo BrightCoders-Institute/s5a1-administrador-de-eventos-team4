@@ -53,8 +53,6 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-
-
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
@@ -83,3 +81,5 @@ gem 'dotenv', groups: [:development, :test]
 gem "image_processing", ">= 1.2"
 
 gem 'will_paginate', '~> 3.3'
+
+gem 'delayed_job_active_record'
