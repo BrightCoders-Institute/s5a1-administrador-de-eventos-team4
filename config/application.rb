@@ -29,5 +29,13 @@ module S5a1AdministradorDeEventosTeam4
     config.active_job.queue_adapter = :delayed_job
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    ActionMailer::Base.smtp_settings = {
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :authentication => :plain,
+      :domain => 'gmail.com',
+      :user_name => ENV['SMTP_ADDRESS'],
+      :password => ENV['SMTP_PASSWORD'],
+    }
   end
 end
