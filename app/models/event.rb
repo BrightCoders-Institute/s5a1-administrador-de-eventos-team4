@@ -1,3 +1,6 @@
+# frozen_string_literal: false
+
+#class Event
 class Event < ApplicationRecord
   belongs_to :user
 
