@@ -21,23 +21,29 @@
               <% link_to destroy_user_session_path, data:{turbo_method: :delete} %>
           <% end %>
         </li>
-        <li class="nav-item">
           <% if signed_in? && current_page?(events_index_path)%>
-            <%= link_to "Eventos Publicos", events_public_path , class: "nav-link active"%>
+            <li class="nav-item">
+              <%= link_to "Eventos Publicos", events_public_path , class: "nav-link active"%>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Descargar mis Eventos', events_index_path(format: :csv), class: "nav-link active" %>
+            </li>
           <% end %>
-        </li>
-        <li class="nav-item">
-          <% if signed_in? && current_page?(events_public_path)%>
-            <%= link_to "Mis Eventos", events_index_path , class: "nav-link active"%>
-          <% end %>
-        </li>
+        <% if signed_in? && current_page?(events_public_path)%>
+          <li class="nav-item">
+              <%= link_to "Mis Eventos", events_index_path , class: "nav-link active"%>
+          </li>
+            <li class="nav-item">
+              <%= link_to 'Descargar Eventos Publicos', events_public_path(format: :csv), class: "nav-link active" %>
+          </li>
+        <% end %>
       </ul>
 
       <p class="text-light"><%= current_user.name if current_user%></p>
       
       <div>
         <% if signed_in? %>
-          <%= link_to "Salir", destroy_user_session_path, method: :delete, data:{turbo_method: :delete},class: "btn btn-dark" %>
+          <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, data:{turbo_method: :delete},class: "btn btn-dark" %>
         <% end %>
       </div>
     </div>
