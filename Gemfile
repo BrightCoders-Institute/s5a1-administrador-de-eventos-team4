@@ -83,3 +83,5 @@ gem "image_processing", ">= 1.2"
 gem 'will_paginate', '~> 3.3'
 
 gem 'delayed_job_active_record'
+
+gem 'whenever', require: false
