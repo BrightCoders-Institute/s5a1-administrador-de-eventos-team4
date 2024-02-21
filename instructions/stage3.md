@@ -51,6 +51,7 @@ Los objetivos de aprendizaje incluyen el dominio de los conceptos y herramientas
 Los siguientes son los principales temas que se abordan con el desarrollo de este reto:
 
 - Lenguajes de diseño web:
+
   - HTML: estructura y elementos para crear páginas web.
   - CSS: estilos y selectores para el diseño de páginas web.
   - JavaScript: eventos y manipulación del DOM para interactividad en páginas web.
@@ -58,6 +59,7 @@ Los siguientes son los principales temas que se abordan con el desarrollo de est
 - Lenguaje de programación Ruby: lenguaje de programación dinámico y orientado a objetos.
 
 - Fundamentos de Rails:
+
   - Active Record: ORM para interactuar con la base de datos en Ruby on Rails.
   - Active View: presentación de datos en vistas de Ruby on Rails.
   - Active Storage: gestión de archivos adjuntos en Ruby on Rails.
@@ -68,6 +70,7 @@ Los siguientes son los principales temas que se abordan con el desarrollo de est
   - Migraciones: cambios controlados en la estructura de la base de datos.
 
 - Fundamentos de base de datos:
+
   - Modelado de datos relacionales: diseño estructurado de la base de datos.
 
 - Herramientas adicionales:
@@ -139,22 +142,28 @@ La empresa `BrightCoders Events` requiere una nueva actualización en su aplicac
 # 🚨 Requerimientos no funcionales
 
 1. Envío de correos y notificaciones push:
+
    - Se debe utilizar Action Mailer y Active Job para el envío de correos y notificaciones push en la aplicación.
 
 2. Manejador de procesos de fondo:
+
    - Se debe utilizar un manejador de procesos de fondo, como Sidekiq o Resque, para realizar tareas en segundo plano.
 
 3. Manipulación de archivos CSV:
+
    - La aplicación debe ser capaz de leer y escribir archivos CSV para la importación y exportación de datos.
 
 4. Implementación de Controladores y Modelos:
+
    - Se debe presentar al menos una prueba por controlador y modelo en la aplicación para verificar su funcionalidad.
    - Para cada funcionalidad implementada en la aplicación, se debe presentar un escenario de prueba correspondiente.
 
 5. Pruebas sin errores:
+
    - Todas las pruebas de la aplicación deben ejecutarse sin errores, asegurando el correcto funcionamiento de la misma.
 
 6. Calidad de código:
+
    - El código de la aplicación debe seguir el formato y las convenciones de calidad establecidas en las instrucciones.
    - Se debe utilizar las herramienta Rubocop y Reek para garantizar la consistencia y legibilidad del código.
    - El código de la aplicación debe alcanzar una calificación mínima de 85 en Ruby Critic.
@@ -197,21 +206,26 @@ Aquí tienes una lista de recursos recomendados para el ejercicio:
 ¿Terminaste el reto? Para verificar que se ha cumplido con todos los requerimientos y objetivos del reto, se pueden utilizar los siguientes indicadores:
 
 1. Correo de verificación:
+
    - La aplicación envía un correo electrónico a los usuarios registrados para verificar su dirección de correo electrónico.
    - El proceso de registro se completa mediante el correo de confirmación.
 
 2. Recuperación de contraseña:
+
    - Los usuarios pueden recuperar su contraseña a través de un correo electrónico enviado por la aplicación.
 
 3. Recordatorios automáticos:
+
    - Los usuarios pueden establecer fechas y horas específicas para recibir recordatorios automáticos por correo electrónico.
    - La aplicación envía automáticamente recordatorios a los usuarios en la fecha y hora programada.
 
 4. Exportar eventos en formato CSV:
+
    - Los usuarios pueden exportar el listado de eventos consultados en un archivo en formato CSV.
    - El contenido del archivo exportado depende del filtro seleccionado por el usuario.
 
 5. Envío de correos y notificaciones push:
+
    - Se utiliza Action Mailer y Active Job para enviar correos y notificaciones push en la aplicación.
 
 6. Manejador de procesos de fondo:

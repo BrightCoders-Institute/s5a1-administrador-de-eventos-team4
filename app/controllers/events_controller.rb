@@ -2,6 +2,8 @@
 
 # class Events
 class EventsController < ApplicationController
+  require 'csv'
+
   before_action :authenticate_user!
 
   before_action :set_event, only: [:edit, :destroy, :update]
@@ -33,7 +35,6 @@ class EventsController < ApplicationController
       @event = Event.user_event(current_user).where(fecha: @date).paginate(page: params[:page], per_page: 3)
       @date = ''
     else
-      # @products = Product.all.paginate(page: params[:page], per_page: 5)
       @event = Event.user_event(current_user).paginate(page: params[:page], per_page: 3)
     end
   end
